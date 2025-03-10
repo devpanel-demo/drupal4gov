@@ -1,0 +1,45 @@
+@mixin pill($variant: false) {
+  display: inline-flex;
+  align-items: center;
+  height: auto;
+  padding: 10px 20px;
+  border: 2px solid #eee;
+  border-radius: 26px;
+  background-color: white; 
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  
+  @media only screen and (max-width: 750px) {
+    padding: 5px 20px;
+    text-align: center;
+  }
+
+  &:focus-visible {
+    outline: solid 2px var(--blue-bright);
+    outline-offset: 2px;
+  }
+
+  @if $variant == 'primary' {
+    background-color: var(--blue-bright);
+    border-color: transparent;
+    color: white;
+
+    &:hover {
+      background-color: var(--blue-dark);
+      color: white;
+    }
+  }
+
+  @if $variant == 'inset' {
+    background-color: transparent;
+    border-color: currentColor;
+
+    &:hover {
+      background-color: var(--blue-bright);
+      border-color: var(--blue-bright);
+      color: white;
+    }
+  }
+}

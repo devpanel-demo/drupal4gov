@@ -1,0 +1,9 @@
+uuid: e220440d-2168-4232-b863-67a0b3b1a4d1
+langcode: en
+status: true
+dependencies: {  }
+name: Speaker
+vid: speaker
+description: null
+weight: 0
+new_revision: false

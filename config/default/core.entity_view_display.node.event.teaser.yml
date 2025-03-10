@@ -1,0 +1,67 @@
+uuid: 242fc18c-91bb-48dc-8145-0571c681388f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.body
+    - field.field.node.event.field_address
+    - field.field.node.event.field_date
+    - field.field.node.event.field_event_url
+    - field.field.node.event.field_file
+    - field.field.node.event.field_image
+    - field.field.node.event.field_speaker
+    - field.field.node.event.field_type
+    - field.field.node.event.field_video
+    - node.type.event
+  module:
+    - datetime_range
+    - manage_display
+    - media
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  field_date:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: default_date_time_
+      from_to: both
+      separator: '-'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  title:
+    type: title
+    label: hidden
+    settings:
+      link_to_entity: true
+      tag: h2
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  created: true
+  field_address: true
+  field_event_url: true
+  field_file: true
+  field_speaker: true
+  field_type: true
+  field_video: true
+  links: true
+  uid: true

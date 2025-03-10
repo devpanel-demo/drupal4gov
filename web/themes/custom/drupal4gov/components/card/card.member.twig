@@ -1,0 +1,12 @@
+{% embed 'drupal4gov:card' with {
+  title: 'Become a Member',
+  text: 'Join Drupal4Gov to power our sustainability and growth. Your membership fees drive events, resources, and community initiatives. Be a part of fostering innovation in Drupal and government – join today!',
+  cta: {
+    url: '/become-a-member',
+    title: 'Learn More About Membership',
+  }
+} %}
+  {% block media %}
+    <img src="/{{ componentMetadata.path }}/images/card-member.jpg" alt="Man with glasses and a red lanyard smiles while using a blue Apple laptop." width="612" height="408" loading="lazy">
+  {% endblock %}
+{% endembed %}

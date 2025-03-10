@@ -1,0 +1,12 @@
+{% embed 'drupal4gov:card' with {
+  title: 'Become a Patron',
+  text: 'Support Drupal4Gov as a patron to drive government innovation. Your contribution funds resources, training, and events for government professionals, transforming websites and apps to enhance citizen services.',
+  cta: {
+    url: '/become-a-patron',
+    title: 'Learn More About Patronage',
+  }
+} %}
+  {% block media %}
+    <img src="/{{ componentMetadata.path }}/images/card-patron.jpg" alt="People interact at various booths in a well-lit convention center hallway with large windows." width="612" height="408" loading="lazy">
+  {% endblock %}
+{% endembed %}

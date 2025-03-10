@@ -1,0 +1,73 @@
+uuid: 986204fa-2524-4886-b9b0-25e32a6d9b97
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blog_body
+    - field.field.node.blog_author.body
+    - field.field.node.blog_author.field_author_image
+    - field.field.node.blog_author.field_company
+    - field.field.node.blog_author.field_position
+    - field.field.node.blog_author.field_url
+    - image.style.blog_150x150_
+    - node.type.blog_author
+  module:
+    - layout_builder
+    - link
+    - manage_display
+    - media
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.blog_author.blog_body
+targetEntityType: node
+bundle: blog_author
+mode: blog_body
+content:
+  field_author_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: blog_150x150_
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_company:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_position:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  title:
+    type: title
+    label: hidden
+    settings:
+      link_to_entity: true
+      tag: div
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  created: true
+  field_url: true
+  links: true
+  uid: true

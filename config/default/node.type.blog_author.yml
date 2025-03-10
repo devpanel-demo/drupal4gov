@@ -1,0 +1,17 @@
+uuid: 494e27d4-b867-4aca-b628-debc9957fc48
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Blog Author'
+type: blog_author
+description: 'Referenced by the blog content type.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

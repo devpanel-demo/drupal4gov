@@ -1,0 +1,18 @@
+{% embed 'drupal4gov:hero' with {
+    ctas: [
+      {
+        title: 'Learn More About Our Work',
+        url: '/our-work',
+      }
+    ]
+  } %}
+  {% block media %}
+    <img src="/{{ componentMetadata.path ~ '/images/SMB_5299-sm.jpeg' }}" width="467" height="467" alt="Group of people attending seminar">
+  {% endblock %}
+  {% block content %}
+    <p>
+      <span class="blue">Connecting and serving all levels of government employees</span>
+      <span>committed to open source technology</span>
+    </p>
+  {% endblock %}
+{% endembed %}

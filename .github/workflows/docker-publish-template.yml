@@ -58,8 +58,7 @@ jobs:
         echo "PREPARE DIR FOR INSTALL"
         docker exec ${{ job.services.webserver.id }} bash -c "sudo rm -rf \$APP_ROOT && sudo mkdir -p \$APP_ROOT"
         docker exec ${{ job.services.webserver.id }} bash -c "sudo cp -r /app/. \$APP_ROOT/."
-        docker exec ${{ job.services.webserver.id }} bash -c "sudo chown -R www:www \$APP_ROOT"
-        docker exec ${{ job.services.webserver.id }} bash -c "export && cd \$APP_ROOT && ls -al"
+        docker exec ${{ job.services.webserver.id }} bash -c "sudo chown -R www:www \$APP_ROOT && chmod +x \$APP_ROOT/.devpanel/*.sh"
         echo "SET UP GIT"
         docker exec ${{ job.services.webserver.id }} bash -c "git config --global --add safe.directory \$APP_ROOT"
         docker exec ${{ job.services.webserver.id }} bash -c "git config --global --add safe.directory \$APP_ROOT/repos/drupal/drupal_cms"
@@ -67,9 +66,8 @@ jobs:
         docker exec ${{ job.services.webserver.id }} bash -c "sudo chmod +x \$APP_ROOT/.devpanel/custom_package_installer.sh"
         docker exec ${{ job.services.webserver.id }} bash -c "\$APP_ROOT/.devpanel/custom_package_installer.sh"
         echo "INSTALL DRUPAL"
-        docker exec ${{ job.services.webserver.id }} bash -c "cd \$APP_ROOT && ls -al"
-        docker exec ${{ job.services.webserver.id }} bash -c "sudo chmod +x \$APP_ROOT/.devpanel/re-config.sh"
         docker exec ${{ job.services.webserver.id }} bash -c "\$APP_ROOT/.devpanel/re-config.sh"
+        docker exec ${{ job.services.webserver.id }} bash -c "cd \$APP_ROOT && ls -al"
 
     - name: Set env to testing environment
       run: |
